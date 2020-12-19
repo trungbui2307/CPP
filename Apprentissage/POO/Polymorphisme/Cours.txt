@@ -1,0 +1,10 @@
+Principaux rappels:
+- En C++, deux ingredients sont necessaires au polymorphisme: des methodes virtuelles, et un appel indirect, par pointeur ou
+par reference.
+    + Methode virtuelle:
+        virtual Type nom_fonction(liste d'arguments);
+    + Methode virtuelle pure (c-a-d):
+        virtual Type nom_methode(liste d'arguments) = 0;
+    
+    Une classe qui contient au moins une methode virtuelle pure est appelee << classe abstraite >> (on ne peut en effet pas
+    en creer d'instance)

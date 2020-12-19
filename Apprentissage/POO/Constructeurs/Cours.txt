@@ -1,0 +1,19 @@
++ Un constructeur est une methode particuliere appelee lors de la creation d'un objet. Les constructeur sont donc les methodes
+servant a initialiser les instances.
++ Un destructeur est une methode automatiquement appelee lorsqu'une instance cesse d'exister.
+
++ Constructeur (initilisation des attributs avec des valeurs passees en argument)
+    NomClasse(liste_argument)
+    : attribut1(...),
+    ...
+    attributN(...)
+    { operation }
+
++ Constructeur de copie(initilisation des attributs lors de la creation d'une instance par copie d'une autre)
+    NomClasse(const NomClasse&)
+    : ... // optionnel
+    {...}
+
++ Destructeur
+    ~NomClasse()
+    { //Operations (de liberation)}

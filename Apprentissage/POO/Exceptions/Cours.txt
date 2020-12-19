@@ -1,0 +1,8 @@
+Principaux rappels:
+
+-throw exception: lance l'exception definie par expression.
+-try{...} introduit un bloc sensible aux exception
+-catch(type nom){...} definit le bloc de gestion des exceptions provenant du precedent bloc try
+
+    Tout bloc try doit toujours etre suivi d'un bloc catch gerant les exceptions pouvant etre lancees dans ce bloc try.
+    Si une exception est lancee mais n'est pas interceptee par le catch correspondant, le programme s'arrete.

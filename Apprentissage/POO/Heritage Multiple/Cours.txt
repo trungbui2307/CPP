@@ -1,0 +1,18 @@
+Representer des relations du genre << A est un B et aussi un C >>
+
+Principaux rappels :
+
+- Declaration: class SousClasse : droit1 SuperClasse1, droitN SuperClasseN {...};
+    L'ordre de declaration est important: lors de la construction ce sera toujours le constructeur de la premiere super-classe 
+    (SuperClasse1) est appele.
+
+- Class virtuelle:
+    Pour eviter qu'une sous-classe herite plusieurs fois d'une meme classe, il faut declarer les derivations concernees comme
+virtuelles:
+    class SousClasse : droit virtual SuperClasse 
+
+- Constructeur:
+    L'appel des constructeurs des super-classes se fait exactement de la meme maniere que dans le cas de l'heritage simple:
+    SousClasse(arguments) : SuperClasse1(arguments1), ... SuperClasseN(argumentsN),
+    attribut1(valeur1),... attributK(valeurK){...}
+    

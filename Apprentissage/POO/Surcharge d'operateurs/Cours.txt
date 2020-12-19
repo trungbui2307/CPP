@@ -1,0 +1,28 @@
+Principaux rappels:
+-Surcharge de l'operateur interne Op: 
+    class Classe{
+        ...
+        // prototype de l'operateur Op
+        type_retour operatorOp(type_argument);
+        ...
+    };
+
+    // definition de l'operateur Op 
+    type_retour Classe::operatorOp(type_argument){...}
+
+-Surcharge de l'operateur externe:
+    type_retour operatorOp(type_argument, const Classe&){...}
+
+-Quelques exemple de prototypes usuels:
+    + bool operator==(const Classe&) const;
+    + bool operator<(const Classe&) const;
+    + Classe& operator=(const Classe&);
+    + Classe& operator+=(const Classe&);
+    + Classe& operator++();
+    + Classe& operator++(int);
+    + Classe& operator*=(autre_type);
+    + const Classe operator-() const;
+
+// operateurs externe:
+    ostream& operator<<(ostream&, const Classe&); //ex: cout << p
+    const Classe operator+(Classe, const Classe&); //ex: r = p + q

@@ -1,0 +1,14 @@
+Programmation generique < polymorphisme parametrique >
+
+Principaux rappels:
+-Declaration d'un modele de classes ou de fonctions:
+    template<typename nom1, typename nom2, ...>
+
+-Definition externe des methodes de modeles de classes:
+    template<typename nom1, typename nom2, ...> NomClasse<nom1, nom2, ...>::NomMethode(...)
+
+    Instanciation: specifier simplement les types voulus apres le nom de la classe/ fonction entre <>. Par exemple: vector<double>
+
+    Specialisation (totale) de modeles pour les types type1, type2, ... :
+    template<> NomModele<type1, type2,...>
+    .... suite de la declaration

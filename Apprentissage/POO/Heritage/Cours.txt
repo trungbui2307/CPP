@@ -1,0 +1,30 @@
++ L'heritage est une relation orientee entre 2 classes (la sous-classe et la super-classe) qui permet a la sous-classe 
+de reutiliser les attributs/methodes de la super-classe
+    << A herite de B >> c-a-d << A est un B >>
+
+---- Principaux rappels ----
+
+class SousClasse : droit SuperClasse {...} - ou "droit" est soit public, soit protected, soit private 
+
+                                    acces initial
+         _______________public_______protected____private______
+heritage | public     | public    |  protected |  pas d'acces |
+         | protected  | protected |  protected |  pas d'acces |
+         | private    | private   |  private   |  pas d'acces |
+         ______________________________________________________
+
+Si le droit est omis dans la declaration de la classe, private est applique.
+Concernant les attributs ou methodes d'une classe, le droit d'acces protected specifie que l'acces a ces attributs/methodes 
+n'est autorise qu'aux sous-classes (en tant qu'attributs/methodes de cette sous-classe)
+
++ Masquage:
+Pour avoir acces a un membre de super-classe cache par masquage, il faut le nommer explicitement en utilisant l'operateur de 
+resolution de portee << :: >>
+    SuperClasse::membre
+
++ Appel du constructeur de la super-classe
+Le constructeur d'une sous classe fait appel au constructeur de la super classe en utilisant la <<section: >>
+
+SousClasse(liste de parametre) : SuperClasse(arguments),
+    attribut1(valeur1),...,attributN(valeurN)
+{...}
