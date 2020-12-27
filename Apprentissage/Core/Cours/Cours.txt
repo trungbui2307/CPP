@@ -1,0 +1,92 @@
+short a;
+int b;
+long c;
+long long d;
+unsigned short aa;
+unsigned int bb;
+unsigned long cc;
+unsigned long long dd;
+
+short <= int <= long <== long long
+
+cout << sizeof(short) << std::endl; // bit of data types
+cout << INT_MAX << std::endl; short => USHRT_MAX(MIN), long => ULLONG_MAX(MIN)
+
+-----------------------------------------------------------------
+char x = 55;
+cout << (int) x << std::endl; // resultat = 55
+cout << x << std::endl; // ASCII table
+
+-----------------------------------------------------------------
+constants const create read-only variable after declare the variable 
+macro : #define // prefer the const technique
+enum { y=100 }
+
+-----------------------------------------------------------------
+-String-
+
+std::string greeting = "hello";
+std::cout << greeting[0] << std::endl; -> resultat: h 
+greeting.length() = 5;
+
+(*) method == member function == function attached to objects
+
+char name[] = "Caleb"; // c string == array of characters "Caleb\0"
+getline(std::cin, greeting); afficher totalement string
+cin.getline();
+
+greeting += " there" == greeting.append(" there"); // Hello there
+greeting.insert(3,"  "); // push into string
+greeting.ecrase(3,1);
+greeting.pop_back(); supprimer le dernier character
+greeting.replace(0,4, "heaven"); 
+
+std::string greeting = "What the hell";
+greeting.replace(greeting.find("hell"), 4, "****");
+
+std::string greeting = "What is up";
+std::cout << greeting.substr(5,2) << std::endl; //extract part of a paragraph -> result: is
+
+greeting.find_first_of("aeuoi"); // find the first one of vowel in string 
+
+greeting.compare("What is up") == 0; // compare string 
+
+----------------------------------------------------------------------
+
+auto x = 5U; ("This is ...")  /* Le mot clé auto spécifie que le type de la variable 
+qui est déclarée de début sera automatiquement déduit de son initialiseur et pour les fonctions
+si leur type de retour est auto alors cela sera évalué par l'expression de type de retour au moment de l'exécution */
+
+----------------------------------------------------------------------
+-Array/Vector/Templatized array/-
+
+// Array int guesses[100] statically sized
+// Vectors std::vector<int> name = {12 , 13} dynamic array
+   name.push_back(100);
+   name.size();
+   name[name.size() - 1];
+// Templatized array 
+   std::array<int,5> ages = { 1, 2, 3};
+   ages.size();
+
+// Difference:
+std::vector<int> stuff;
+std::vector<int> things = stuff;
+C style array pass by pointer in other words when u pass an array to a function it decay to a pointer and basically forget
+how large the size of memory reserved for that so u must to pass an additional size. Vector and STL array pass by value
+one thing is similar of C style array and stl array is statically sized
+
+Array                   STL Array           STL Vector
+static                  static              dynamic 
+decay to pointer        pass by value       pass by value 
+must pass around size   .size()             .size()
+X                       assign to others    assign to others 
+                        vars                vars
+
+
+
+
+
+
+
+
