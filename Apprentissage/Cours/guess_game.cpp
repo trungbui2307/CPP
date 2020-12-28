@@ -5,6 +5,32 @@
 #include <vector>
 #include <fstream>
 
+void save_score(int guess_count){
+    std::ifstream input("best_score.txt");
+    if(!input.is_open())
+    {
+        std::cout << "unable to read file\n" << std::endl;
+       
+    }
+    int best_score;
+    input >> best_score;
+
+    std::ofstream output("best_score.txt");
+    if(!output.is_open())
+    {
+        std::cout << "unable to read file\n" << std::endl;
+       
+    }
+    else if(guess_count < best_score)
+    {
+        output << guess_count;
+    }
+    else
+    {
+        output << best_score;
+    }
+}
+
 void print_array(int array[], int size)
 {
     for(int i = 0; i < size; i++){
@@ -49,29 +75,7 @@ void play_game()
         }
     }
     //print_array(guesses, guess_count);
-    std::ifstream input("best_score.txt");
-    if(!input.is_open())
-    {
-        std::cout << "unable to read file\n"
-        return;
-    }
-    int best_score;
-    input >> best_score;
-
-    std::ofstream output("best_score.txt");
-    if(!output.is_open())
-    {
-        std::cout << "unable to read file\n"
-        return;
-    }
-    if(guess_count < best_score)
-    {
-        output << guess_count;
-    }
-    else
-    {
-        output << best_score;
-    }
+    save_score(guess_count);
     
     print_vector(guesses);
 }
