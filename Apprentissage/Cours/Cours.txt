@@ -82,8 +82,20 @@ decay to pointer        pass by value       pass by value
 must pass around size   .size()             .size()
 X                       assign to others    assign to others 
                         vars                vars
+--------------------------------------------------------------------------
+OPP - 1) function
+      2) method
+      3) static method
+      4) constructor
+
+---------------------------------------------------------------------------
+Multifile Compilation - 1) header file / declaration
+                        2) implementation file / definition
+                        3) main file / compilation
 
 
+----------------------------------------------------------------------------
+Function Templates:     template<typename T> void swap (T &x, T &y){}
 
 
 

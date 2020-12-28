@@ -2,7 +2,19 @@
 #include <limits>
 #include <vector>
 #include <array>
+using namespace utilz;
+namespace utilz
+{
+    void print_array(int array[], int size)
+{
+    for(int i = 0; i < size; i++){
+        std::cout << array[i] << "\t";
+    }
+    std::cout << std::endl;
+}
+}
 
+/*
 void print_array(int array[], int size)
 {
     for(int i = 0; i < size; i++){
@@ -10,7 +22,7 @@ void print_array(int array[], int size)
     }
     std::cout << std::endl;
 }
-
+*/
 //Const Modifier
 /*
 void do_something(const int array[])
@@ -118,5 +130,6 @@ int main()
             std::cout << grades[r][c] << "\t";
         }
     }
+    utilz::print_array(guesses,cout);
     return 0;
 }
