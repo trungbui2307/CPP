@@ -1,7 +1,6 @@
 #include <iostream>
 #include <vector>
-
-
+#include <string>
 
 class User
 {   
@@ -24,12 +23,11 @@ class User
     User()
     {
         
-        std::cout << "Constructor\n";
         user_count++;
     }
     User(std::string first_name, std::string last_name)
     {
-        std::cout << "Constructor1\n";
+       
         this->first_name = first_name;
         this->last_name = last_name;
         user_count++;
@@ -38,13 +36,33 @@ class User
     ~User()
     {
         user_count--;
-        std::cout << "Destructor\n";
+      
     }
+    friend void output_status(User user);
+    friend std::ostream& operator <<(std::ostream& output, const User user);
    
     private:
     std::string status = "Single";
+
 };
 int User::user_count = 0;
+void output_status(User user)
+{
+    std::cout << user.status;
+}
+
+std::ostream& operator <<(std::ostream& output, const User user)
+{
+    output << "First name: " << user.first_name << "\nLast name: " << user.last_name << "\nStatus" << user.status;
+    return output;
+}
+
+
+std::istream& operator >>(std::istream& input, User &user)
+{
+    input >> user.first_name >> user.last_name;
+    return input;
+}
 
 int add_user_if_not_exists(std::vector<User> &users, User user)
 {
@@ -80,16 +98,20 @@ int main()
     User user5("Caleb", "Curry");
     user.first_name = "Trung";
     user.last_name = "BUI";
+    
+    std::cin >> user;
+    std::cout << user << std::endl;
+    output_status(user);
 
     user1.first_name = "Trung1";
     user1.last_name = "BUI1";
+
     
     user2.first_name = "Trung2";
     user2.last_name = "BUI2";
     
     user3.first_name = "Trung3";
     user3.last_name = "BUI3";
-    std::cout << User::get_user_count << "\n";
     
     //user.status = "Single";
     std::vector<User> users;
